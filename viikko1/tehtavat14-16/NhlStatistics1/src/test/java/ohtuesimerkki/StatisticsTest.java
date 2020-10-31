@@ -62,8 +62,7 @@ public class StatisticsTest {
     @Test
     public void palauttaaParhaatMaalintekijat() {
         List<Player> s = stats.topScorers(1);
-        System.out.println(s);
-        //assertEquals(1, s.size());
-        //assertEquals("Lemieux", s.get(0).getName());
+        assertEquals(1, s.size());
+        assertEquals("Gretzky", s.get(0).getName());
     }
 }
