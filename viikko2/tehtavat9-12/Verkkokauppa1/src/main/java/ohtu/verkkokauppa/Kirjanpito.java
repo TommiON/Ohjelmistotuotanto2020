@@ -2,7 +2,9 @@
 package ohtu.verkkokauppa;
 
 import java.util.ArrayList;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Kirjanpito implements Tilioiva {
     
     private ArrayList<String> tapahtumat;
