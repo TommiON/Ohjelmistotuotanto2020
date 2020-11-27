@@ -5,4 +5,6 @@ import javafx.event.Event;
 public abstract class Komento {
     
     public abstract void suorita();
+
+    public abstract void peru();
 }
