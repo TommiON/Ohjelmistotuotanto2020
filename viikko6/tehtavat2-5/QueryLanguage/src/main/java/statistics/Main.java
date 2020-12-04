@@ -18,7 +18,6 @@ public class Main {
         Matcher m = new And(new Not( new HasAtLeast(1, "goals") ), 
                             new PlaysIn("NYR")
         );
-        
         for (Player player : stats.matches(m)) {
             System.out.println(player);
         }
@@ -26,8 +25,6 @@ public class Main {
         m = new And(new HasFewerThan(1, "goals"), 
                             new PlaysIn("NYR")
         );
-
-        
         System.out.println("======");
         for (Player player : stats.matches(m)) {
             System.out.println(player);
@@ -35,6 +32,25 @@ public class Main {
 
         System.out.println("======");
         System.out.println(stats.matches(new All()).size());
+
+        m = new Or( new HasAtLeast(40, "goals"),
+                    new HasAtLeast(60, "assists")
+        );  
+        System.out.println("======");
+        for (Player player : stats.matches(m)) {
+            System.out.println(player);
+        }
+
+        m = new And(new HasAtLeast(50, "points"),
+                    new Or( new PlaysIn("NYR"),
+                            new PlaysIn("NYI"),
+                            new PlaysIn("BOS")
+                        )
+        ); 
+        System.out.println("======");
+        for (Player player : stats.matches(m)) {
+            System.out.println(player);
+        }
 
     }
 }
