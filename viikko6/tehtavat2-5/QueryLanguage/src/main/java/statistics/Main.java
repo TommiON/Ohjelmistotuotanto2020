@@ -52,5 +52,13 @@ public class Main {
             System.out.println(player);
         }
 
+        System.out.println("== Builder ====");
+        
+        QueryBuilder query = new QueryBuilder();
+        Matcher builtM = query.playsIn("NYR").hasAtLeast(5, "goals").hasFewerThan(10, "goals").build();
+
+        for (Player player : stats.matches(builtM)) {
+            System.out.println( player );
+        }
     }
 }
